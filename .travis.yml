@@ -15,7 +15,8 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
+  #- docker build -t simple-node .
+  - docker build -t simple-node --build-arg NAME=${NAME} .
   - docker tag simple-node "$DOCKER_USERNAME"/simple-node:latest
 
 after_success:
